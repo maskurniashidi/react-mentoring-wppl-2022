@@ -5,6 +5,7 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Landing from "./components/Landing";
 import Register from "./components/Register";
+import DetailPost from "./components/DetailPost";
 
 const App = () => {
   return (
@@ -41,6 +42,14 @@ const App = () => {
           element={
             <PrivateRoute>
               <Dashboard />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/post/:id"
+          element={
+            <PrivateRoute>
+              <DetailPost />
             </PrivateRoute>
           }
         />

@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
+import "./styles/styles.css";
 
 function DetailPost() {
+  
   const [data, setData] = useState({});
   const { id } = useParams();
   useEffect(() => {
@@ -27,10 +29,13 @@ function DetailPost() {
   return (
     <>
       <Navbar />
-      <div>
-        <p>id : {data.id}</p>
-        <p>title : {data.title}</p>
-        <p>body : {data.body}</p>
+      <div className="main-division">
+        <p>Id : {data.id}</p>
+        <p>Title : {data.title}</p>
+        <p>Body : {data.body}</p>
+        <div className="note">
+          Teman-teman hanya bisa melihat tulisan ini jika sudah LOGIN / ter-Autentikasi
+        </div>
       </div>
     </>
   );

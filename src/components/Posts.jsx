@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import "./styles/styles.css";
 
 function Posts() {
+
   const [data, setData] = useState([]);
+  
   useEffect(() => {
-    // ini diperlukan ketika kalian memperlukan authentikasi untuk ngege data, jika tidak perlu. bisa tidak pake
+    // ini diperlukan ketika kalian memperlukan authentikasi untuk GET data, jika tidak perlu. bisa tidak pake
     // const config = {
     //   headers: {
     //     Authorization: "Bearer " + localStorage.getItem("TOKEN"),
     //     "Content-Type": "application/json",
     //   },
     // };
+
     axios
       .get("https://jsonplaceholder.typicode.com/posts")
       .then((res) => {
@@ -29,8 +33,13 @@ function Posts() {
       <h1>Daftar Post</h1>
       {data.map((data) => {
         return (
-          <Link to={`/post/${data.id}`} key={data.id}>
-            <p>id: {data.id}</p>
+          <Link 
+            to={`/post/${data.id}`} 
+            key={data.id}
+            style={{textDecoration: 'none', color: 'black'}}
+          >
+            <hr/>
+            <p>Id: {data.id}</p>
             <p>Title: {data.title}</p>
             <p>Body: {data.body}</p>
           </Link>

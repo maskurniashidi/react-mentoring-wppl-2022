@@ -2,7 +2,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./Navbar";
+import "./styles/styles.css";
+
 function Register() {
+
   const [user, setUser] = useState({
     email: "",
     username: "",
@@ -33,22 +36,27 @@ function Register() {
   return (
     <div>
       <Navbar />
-      <h1>Register</h1>
-      <div>
-        <div className="form-field">
-          <label htmlFor="email">Email</label>
-          <input type="text" name="email" id="email" onChange={handleChange} />
+      <div className="main-division">
+        <h1>Register</h1>
+        <div>
+          <div className="form-field">
+            <label htmlFor="email">Email</label>
+            <input type="text" name="email" id="email" onChange={handleChange} />
+          </div>
+          <div className="form-field">
+            <label htmlFor="username">Username</label>
+            <input type="username" name="username" id="username" onChange={handleChange} />
+          </div>
+          <div className="form-field">
+            <label htmlFor="passoword">Password</label>
+            <input type="password" name="password" id="password" onChange={handleChange} />
+          </div>
         </div>
-        <div className="form-field">
-          <label htmlFor="username">Username</label>
-          <input type="username" name="username" id="username" onChange={handleChange} />
-        </div>
-        <div className="form-field">
-          <label htmlFor="passoword">Password</label>
-          <input type="password" name="password" id="password" onChange={handleChange} />
+        <button onClick={handleClick}>Register</button>
+        <div className="note">
+          Note: Silahkan buat akun dengan mengisi form diatas
         </div>
       </div>
-      <button onClick={handleClick}>Register</button>
     </div>
   );
 }

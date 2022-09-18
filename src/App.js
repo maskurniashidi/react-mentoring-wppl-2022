@@ -36,7 +36,7 @@ const App = () => {
             </PublicRoute>
           }
         />
-        {/* private routes => hanya bisa diakses ketika sudah login */}
+        {/* Private routes => hanya bisa diakses ketika sudah login */}
         <Route
           path="/dashboard"
           element={

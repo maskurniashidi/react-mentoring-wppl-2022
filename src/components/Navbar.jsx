@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/styles.css";
+
 function Navbar() {
+  
   return (
     <nav className="navbar">
       <Link to="/">Landing Page</Link>

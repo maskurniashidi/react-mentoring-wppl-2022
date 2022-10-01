@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Landing from "./components/Landing";
 import Register from "./components/Register";
 import DetailPost from "./components/DetailPost";
+import Profile from "./Temp/Profile";
 
 const App = () => {
   return (
@@ -50,6 +51,14 @@ const App = () => {
           element={
             <PrivateRoute>
               <DetailPost />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/profile"
+          element={
+            <PrivateRoute>
+              <Profile />
             </PrivateRoute>
           }
         />

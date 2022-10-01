@@ -5,7 +5,6 @@ import Navbar from "./Navbar";
 import "./styles/styles.css";
 
 function Login() {
-
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -32,16 +31,16 @@ function Login() {
     // Logic dengan Request API
     const requestBody = { email: user.email, password: user.password };
     axios
-      .post(`https://api-fafifu-secondhand.herokuapp.com/v1/auth/login`, requestBody)
+      .post(`http://localhost:8000/api/auth/login`, requestBody)
       .then((res) => {
         console.log(res);
         alert("login berhasil");
-        localStorage.setItem("token", res.data.data.token);
+        localStorage.setItem("token", res.data.token);
         navigate("/dashboard");
       })
       .catch((err) => {
         console.log(err);
-        alert("pendaftaran gagal", err);
+        alert("login gagal", err);
       });
   };
 
@@ -61,9 +60,7 @@ function Login() {
           </div>
           <button onClick={handleClick}>Login</button>
         </div>
-        <div className="note">
-          Note: Buat akun lebih dulu di halaman Register
-        </div>
+        <div className="note">Note: Buat akun lebih dulu di halaman Register</div>
       </div>
     </>
   );

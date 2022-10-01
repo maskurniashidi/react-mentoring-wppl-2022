@@ -6,7 +6,7 @@ import Login from "./components/Login";
 import Landing from "./components/Landing";
 import Register from "./components/Register";
 import DetailPost from "./components/DetailPost";
-import Profile from "./Temp/Profile";
+import Profile from "./components/Profile";
 
 const App = () => {
   return (

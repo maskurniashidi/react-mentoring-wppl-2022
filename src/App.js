@@ -7,6 +7,8 @@ import Landing from "./components/Landing";
 import Register from "./components/Register";
 import DetailPost from "./components/DetailPost";
 import Profile from "./components/Profile";
+import PostApi from "./components/PostApi";
+import Images from "./components/Images";
 
 const App = () => {
   return (
@@ -26,6 +28,22 @@ const App = () => {
           element={
             <PublicRoute>
               <Login />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/post"
+          element={
+            <PublicRoute>
+              <PostApi />
+            </PublicRoute>
+          }
+        />
+        <Route
+          path="/images"
+          element={
+            <PublicRoute>
+              <Images />
             </PublicRoute>
           }
         />
